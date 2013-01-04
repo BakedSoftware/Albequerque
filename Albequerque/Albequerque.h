@@ -12,6 +12,11 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
+static NSString * AQDateKey = @"date";
+static NSString * AQWalkDistanceKey = @"maxWalkDistanceInMetres";
+static NSString * AQMaxJourneysKey = @"maxJourneys";
+static NSString * AQReturnMappingDataKey = @"MappingDataRequired";
+
 typedef void(^AlbequerqueCallback)(AlbequerqueResult* result);
 
 @interface Albequerque : NSObject <NSURLConnectionDataDelegate>
@@ -22,7 +27,8 @@ typedef void(^AlbequerqueCallback)(AlbequerqueResult* result);
 
 + (Albequerque*)sharedInstance;
 - (void)transitFrom:(CLLocationCoordinate2D)origin
-                          to:(CLLocationCoordinate2D)destination
-           completionHandler:(AlbequerqueCallback)handler;
+                 to:(CLLocationCoordinate2D)destination
+        withOptions:(NSDictionary*)options
+  completionHandler:(AlbequerqueCallback)handler;
 
 @end

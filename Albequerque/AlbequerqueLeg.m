@@ -21,13 +21,14 @@ static NSString * kDurationMinutes = @"DurationMinutes";
 static NSString * kWalkDistanceMetres = @"WalkDistanceMetres";
 static NSString * kRouteName = @"RouteName";
 static NSString * kHeadSign = @"Headsign";
+static NSString * kPolyLine = @"Polyline";
 
 static NSString * kWalkFormat = @"Walk from %@ to %@";
 static NSString * kGeneralFormat = @"Take %@ towards %@ (Head Sign: %@)";
 
 @implementation AlbequerqueLeg
 
-@synthesize mode, originDescription, destinationDescription, duration, routeName, headSign, startTime, instructions;
+@synthesize mode, originDescription, destinationDescription, duration, routeName, headSign, startTime, instructions, polyline, walkDistance;
 
 - (id)initWithJSON:(NSDictionary *)json
 {
@@ -60,12 +61,16 @@ static NSString * kGeneralFormat = @"Take %@ towards %@ (Head Sign: %@)";
             routeName = [json valueForKey:kRouteName];
             instructions = [NSString stringWithFormat:kGeneralFormat, t, destinationDescription, headSign];
         } else {
+            walkDistance = [[json valueForKey:kWalkDistanceMetres] unsignedIntegerValue];
             if (!originDescription) {
                 instructions = [NSString stringWithFormat:@"Walk to %@", destinationDescription];
             } else {
                 instructions = [NSString stringWithFormat:kWalkFormat, originDescription, destinationDescription];
             }
         }
+        
+        polyline = [json valueForKey:kPolyLine];
+    
     }
     
     return self;

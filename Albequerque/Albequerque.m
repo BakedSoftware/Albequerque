@@ -11,7 +11,7 @@
 #import <UIKit/UIKit.h>
 
 static NSURL * BASE_URL =  nil;
-static NSString * TRANSIT_FORMAT = @"DataSets/%@/JourneyPlan?from=%f,%f&to=%f,%f&date=%@&apiKey=%@&maxWalkDistanceMetres=%d&format=json";
+static NSString * TRANSIT_FORMAT = @"DataSets/%@/JourneyPlan?from=%f,%f&to=%f,%f&date=%@&apiKey=%@&format=json";
 
 @interface Albequerque ()
 {
@@ -20,30 +20,41 @@ static NSString * TRANSIT_FORMAT = @"DataSets/%@/JourneyPlan?from=%f,%f&to=%f,%f
     NSUInteger statusCode;
     NSURLConnection * currentConnection;
     JSONDecoder *decoder;
+    NSDateFormatter *dateFormatter;
     NSError * lastError;
 }
 
 - (NSString*)_closestDataSet:(CLLocationCoordinate2D)point;
+- (id)_options:(NSDictionary*)options valueForKey:(NSString*)key orDefault:(id)value;
 
 @end
 
 @implementation Albequerque
 
-@synthesize apiKey, maxWalkDistance;
+@synthesize apiKey;
 
-- (void)transitFrom:(CLLocationCoordinate2D)origin to:(CLLocationCoordinate2D)destination completionHandler:(AlbequerqueCallback)handler
+- (void)transitFrom:(CLLocationCoordinate2D)origin to:(CLLocationCoordinate2D)destination withOptions:(NSDictionary *)options completionHandler:(AlbequerqueCallback)handler
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         decoder = [JSONDecoder decoder];
+        dateFormatter = [NSDateFormatter new];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm"];
     });
   currentCallback = handler;
-    NSString * date = @"2013-01-03T15:47";
-  NSString * url = [NSString stringWithFormat:TRANSIT_FORMAT, dataset, origin.latitude, origin.longitude, destination.latitude, destination.longitude, date, apiKey, maxWalkDistance];
-  NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url relativeToURL:BASE_URL]];
-  [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-  currentConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
     NSString * dataset = [self _closestDataSet:origin];
+    NSString * date = [dateFormatter stringFromDate:[self _options:options valueForKey:AQDateKey orDefault:[NSDate new]]];
+    NSMutableString * url = [NSMutableString stringWithFormat:TRANSIT_FORMAT, dataset, origin.latitude, origin.longitude, destination.latitude, destination.longitude, date, apiKey];
+    [options enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        if (key == AQMaxJourneysKey || key == AQWalkDistanceKey) {
+            [url appendFormat:@"&%@=%d", key, [obj integerValue]];
+        } else if (key == AQReturnMappingDataKey) {
+            [url appendFormat:@"&%@=%@", AQReturnMappingDataKey, [obj boolValue] ? @"true" : @"false"];
+        }
+    }];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url relativeToURL:BASE_URL]];
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    currentConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
 }
 
 #pragma mark - Singleton
@@ -54,7 +65,6 @@ static NSString * TRANSIT_FORMAT = @"DataSets/%@/JourneyPlan?from=%f,%f&to=%f,%f
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _instance = [Albequerque new];
-        _instance.maxWalkDistance = 2000;
         BASE_URL = [NSURL URLWithString:@"http://journeyplanner.jeppesen.com/JourneyPlannerService/V2/REST/"];
     });
     return _instance;
@@ -141,6 +151,15 @@ static NSString * TRANSIT_FORMAT = @"DataSets/%@/JourneyPlan?from=%f,%f&to=%f,%f
         }
     }
     return closest;
+}
+
+- (id)_options:(NSDictionary *)options valueForKey:(NSString *)key orDefault:(id)value
+{
+    id optionValue = [options valueForKey:key];
+    if (optionValue) {
+        return optionValue;
+    }
+    return value;
 }
 
 @end
