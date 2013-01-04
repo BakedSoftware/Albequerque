@@ -15,11 +15,11 @@ static NSString * TRANSIT_FORMAT = @"DataSets/%@/JourneyPlan?from=%f,%f&to=%f,%f
 
 @interface Albequerque ()
 {
-  NSMutableData * currentData;
-  AlbequerqueCallback currentCallback;
-  NSUInteger statusCode;
+    NSMutableData * currentData;
+    AlbequerqueCallback currentCallback;
+    NSUInteger statusCode;
     NSURLConnection * currentConnection;
-  JSONDecoder *decoder;
+    JSONDecoder *decoder;
     NSError * lastError;
 }
 
@@ -38,12 +38,12 @@ static NSString * TRANSIT_FORMAT = @"DataSets/%@/JourneyPlan?from=%f,%f&to=%f,%f
         decoder = [JSONDecoder decoder];
     });
   currentCallback = handler;
-  NSString * dataset = [self _closestDataSet:origin];
     NSString * date = @"2013-01-03T15:47";
   NSString * url = [NSString stringWithFormat:TRANSIT_FORMAT, dataset, origin.latitude, origin.longitude, destination.latitude, destination.longitude, date, apiKey, maxWalkDistance];
   NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url relativeToURL:BASE_URL]];
   [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
   currentConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
+    NSString * dataset = [self _closestDataSet:origin];
 }
 
 #pragma mark - Singleton
