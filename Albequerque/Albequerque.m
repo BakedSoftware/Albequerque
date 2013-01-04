@@ -86,11 +86,15 @@ static NSString * TRANSIT_FORMAT = @"DataSets/%@/JourneyPlan?from=%f,%f&to=%f,%f
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    AlbequerqueResult * result = nil;
+    NSArray * result = nil;
     NSDictionary * json = [decoder objectWithData:currentData];
     if (statusCode == 200) {
-        NSDictionary * journey = [json valueForKey:@"Journeys"][0];
-        result = [[AlbequerqueResult alloc] initWithJSON:journey];
+        static NSString * Journeys = @"Journeys";
+        NSMutableArray * results = [[NSMutableArray alloc] initWithCapacity:[[json valueForKey:Journeys] count]];
+        for (NSDictionary * journeyDict in [json valueForKey:Journeys]) {
+            [results addObject:[[AlbequerqueResult alloc] initWithJSON:journeyDict]];
+        }
+        result = results;
     } else {
         static NSString * Domain = @"Albequerque";
         static NSString * CodeKeyPath = @"Status.Details.Code";

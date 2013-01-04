@@ -17,7 +17,7 @@ static NSString * AQWalkDistanceKey = @"maxWalkDistanceInMetres";
 static NSString * AQMaxJourneysKey = @"maxJourneys";
 static NSString * AQReturnMappingDataKey = @"MappingDataRequired";
 
-typedef void(^AlbequerqueCallback)(AlbequerqueResult* result);
+typedef void(^AlbequerqueCallback)(NSArray* results);
 
 @interface Albequerque : NSObject <NSURLConnectionDataDelegate>
 
