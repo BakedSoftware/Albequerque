@@ -47,6 +47,9 @@
         STAssertTrue(result.legs.count > 0, @"Result should have at least 1 leg");
         for (AlbequerqueLeg *leg in result.legs) {
             STAssertNotNil(leg.instructions, @"Leg should always have instructions");
+            if (leg.mode == BUS || leg.mode == TRAIN || leg.mode == LIGHT_RAIL) {
+                STAssertNotNil(leg.headSign, @"Head Sign should always be set for Bus and Rail");
+            }
         }
         
         dispatch_semaphore_signal(semaphore);

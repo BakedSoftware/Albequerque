@@ -20,6 +20,7 @@ static NSString * kDestinationLocationDescription = @"DestinationLocationDescrip
 static NSString * kDurationMinutes = @"DurationMinutes";
 static NSString * kWalkDistanceMetres = @"WalkDistanceMetres";
 static NSString * kRouteName = @"RouteName";
+static NSString * kHeadSign = @"Headsign";
 
 static NSString * kWalkFormat = @"Walk from %@ to %@";
 static NSString * kGeneralFormat = @"Take %@ towards %@ (Head Sign: %@)";
@@ -55,6 +56,7 @@ static NSString * kGeneralFormat = @"Take %@ towards %@ (Head Sign: %@)";
         duration = [[json valueForKey:kDurationMinutes] unsignedIntegerValue];
         
         if (mode != WALK) {
+            headSign = [json valueForKey:kHeadSign];
             routeName = [json valueForKey:kRouteName];
             instructions = [NSString stringWithFormat:kGeneralFormat, t, destinationDescription, headSign];
         } else {
