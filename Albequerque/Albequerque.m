@@ -20,6 +20,7 @@ static NSString * TRANSIT_FORMAT = @"DataSets/%@/JourneyPlan?from=%f,%f&to=%f,%f
   NSUInteger statusCode;
     NSURLConnection * currentConnection;
   JSONDecoder *decoder;
+    NSError * lastError;
 }
 
 - (NSString*)_closestDataSet:(CLLocationCoordinate2D)point;
@@ -76,10 +77,15 @@ static NSString * TRANSIT_FORMAT = @"DataSets/%@/JourneyPlan?from=%f,%f&to=%f,%f
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     AlbequerqueResult * result = nil;
+    NSDictionary * json = [decoder objectWithData:currentData];
     if (statusCode == 200) {
-        NSDictionary * json = [decoder objectWithData:currentData];
         NSDictionary * journey = [json valueForKey:@"Journeys"][0];
         result = [[AlbequerqueResult alloc] initWithJSON:journey];
+    } else {
+        static NSString * Domain = @"Albequerque";
+        static NSString * CodeKeyPath = @"Status.Details.Code";
+        static NSString * MessageKeyPath = @"Status.Details.Message";
+        lastError = [NSError errorWithDomain:Domain code:[[json valueForKeyPath:CodeKeyPath][0] integerValue] userInfo:[NSDictionary dictionaryWithObject:[json valueForKeyPath:MessageKeyPath][0] forKey:NSLocalizedDescriptionKey]];
     }
     
     currentCallback(result);
@@ -88,6 +94,13 @@ static NSString * TRANSIT_FORMAT = @"DataSets/%@/JourneyPlan?from=%f,%f&to=%f,%f
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
     NSLog(@"Error Occured: %@", error.debugDescription);
+}
+
+- (NSError*)error
+{
+    NSError * e = lastError;
+    lastError = nil;
+    return e;
 }
 
 #pragma mark - Private Methods

@@ -18,6 +18,7 @@ typedef void(^AlbequerqueCallback)(AlbequerqueResult* result);
 
 @property (nonatomic, retain) NSString *apiKey;
 @property (nonatomic, assign) NSUInteger maxWalkDistance;
+@property (nonatomic, readonly) NSError *error;
 
 + (Albequerque*)sharedInstance;
 - (void)transitFrom:(CLLocationCoordinate2D)origin
