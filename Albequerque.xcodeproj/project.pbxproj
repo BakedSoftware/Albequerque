@@ -1,0 +1,465 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1157140F394740DA974B88AF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFC86FA2464418AB42D15AE /* libPods.a */; };
+		AF6EADEF169367DB00B41BF2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF6EADEE169367DB00B41BF2 /* Foundation.framework */; };
+		AF6EADF4169367DB00B41BF2 /* Albequerque.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AF6EADF3169367DB00B41BF2 /* Albequerque.h */; };
+		AF6EADF6169367DB00B41BF2 /* Albequerque.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6EADF5169367DB00B41BF2 /* Albequerque.m */; };
+		AF6EADFE169367DB00B41BF2 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF6EADFD169367DB00B41BF2 /* SenTestingKit.framework */; };
+		AF6EAE00169367DB00B41BF2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF6EADFF169367DB00B41BF2 /* UIKit.framework */; };
+		AF6EAE01169367DB00B41BF2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF6EADEE169367DB00B41BF2 /* Foundation.framework */; };
+		AF6EAE04169367DB00B41BF2 /* libAlbequerque.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF6EADEB169367DB00B41BF2 /* libAlbequerque.a */; };
+		AF6EAE0A169367DB00B41BF2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AF6EAE08169367DB00B41BF2 /* InfoPlist.strings */; };
+		AF6EAE0D169367DB00B41BF2 /* AlbequerqueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6EAE0C169367DB00B41BF2 /* AlbequerqueTests.m */; };
+		AFDFC174169620FB0071901E /* AlbequerqueLeg.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDFC173169620FB0071901E /* AlbequerqueLeg.m */; };
+		AFDFC17816962C380071901E /* AlbequerqueResult.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDFC17716962C380071901E /* AlbequerqueResult.m */; };
+		AFDFC17D169631660071901E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFDFC17C169631660071901E /* CoreLocation.framework */; };
+		AFDFC17F1696316B0071901E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFDFC17E1696316B0071901E /* UIKit.framework */; };
+		AFDFC180169632090071901E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFDFC17C169631660071901E /* CoreLocation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AF6EAE02169367DB00B41BF2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF6EADE2169367DB00B41BF2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF6EADEA169367DB00B41BF2;
+			remoteInfo = Albequerque;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AF6EADE9169367DB00B41BF2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				AF6EADF4169367DB00B41BF2 /* Albequerque.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		19C8A47A74A74705977D88CA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		AF6EADEB169367DB00B41BF2 /* libAlbequerque.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAlbequerque.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF6EADEE169367DB00B41BF2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AF6EADF2169367DB00B41BF2 /* Albequerque-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Albequerque-Prefix.pch"; sourceTree = "<group>"; };
+		AF6EADF3169367DB00B41BF2 /* Albequerque.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Albequerque.h; sourceTree = "<group>"; };
+		AF6EADF5169367DB00B41BF2 /* Albequerque.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Albequerque.m; sourceTree = "<group>"; };
+		AF6EADFC169367DB00B41BF2 /* AlbequerqueTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlbequerqueTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF6EADFD169367DB00B41BF2 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		AF6EADFF169367DB00B41BF2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		AF6EAE07169367DB00B41BF2 /* AlbequerqueTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AlbequerqueTests-Info.plist"; sourceTree = "<group>"; };
+		AF6EAE09169367DB00B41BF2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AF6EAE0B169367DB00B41BF2 /* AlbequerqueTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlbequerqueTests.h; sourceTree = "<group>"; };
+		AF6EAE0C169367DB00B41BF2 /* AlbequerqueTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlbequerqueTests.m; sourceTree = "<group>"; };
+		AFDFC172169620FB0071901E /* AlbequerqueLeg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbequerqueLeg.h; sourceTree = "<group>"; };
+		AFDFC173169620FB0071901E /* AlbequerqueLeg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbequerqueLeg.m; sourceTree = "<group>"; };
+		AFDFC17616962C380071901E /* AlbequerqueResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbequerqueResult.h; sourceTree = "<group>"; };
+		AFDFC17716962C380071901E /* AlbequerqueResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbequerqueResult.m; sourceTree = "<group>"; };
+		AFDFC17C169631660071901E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		AFDFC17E1696316B0071901E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AFDFC18116963BC50071901E /* Albequerque.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Albequerque.podspec; sourceTree = "<group>"; };
+		EBFC86FA2464418AB42D15AE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AF6EADE8169367DB00B41BF2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFDFC17F1696316B0071901E /* UIKit.framework in Frameworks */,
+				AFDFC17D169631660071901E /* CoreLocation.framework in Frameworks */,
+				AF6EADEF169367DB00B41BF2 /* Foundation.framework in Frameworks */,
+				1157140F394740DA974B88AF /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF6EADF8169367DB00B41BF2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFDFC180169632090071901E /* CoreLocation.framework in Frameworks */,
+				AF6EADFE169367DB00B41BF2 /* SenTestingKit.framework in Frameworks */,
+				AF6EAE00169367DB00B41BF2 /* UIKit.framework in Frameworks */,
+				AF6EAE01169367DB00B41BF2 /* Foundation.framework in Frameworks */,
+				AF6EAE04169367DB00B41BF2 /* libAlbequerque.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AF6EADE0169367DB00B41BF2 = {
+			isa = PBXGroup;
+			children = (
+				AFDFC18116963BC50071901E /* Albequerque.podspec */,
+				AF6EADF0169367DB00B41BF2 /* Albequerque */,
+				AF6EAE05169367DB00B41BF2 /* AlbequerqueTests */,
+				AF6EADED169367DB00B41BF2 /* Frameworks */,
+				AF6EADEC169367DB00B41BF2 /* Products */,
+				19C8A47A74A74705977D88CA /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		AF6EADEC169367DB00B41BF2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF6EADEB169367DB00B41BF2 /* libAlbequerque.a */,
+				AF6EADFC169367DB00B41BF2 /* AlbequerqueTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF6EADED169367DB00B41BF2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AFDFC17E1696316B0071901E /* UIKit.framework */,
+				AFDFC17C169631660071901E /* CoreLocation.framework */,
+				AF6EADEE169367DB00B41BF2 /* Foundation.framework */,
+				AF6EADFD169367DB00B41BF2 /* SenTestingKit.framework */,
+				AF6EADFF169367DB00B41BF2 /* UIKit.framework */,
+				EBFC86FA2464418AB42D15AE /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF6EADF0169367DB00B41BF2 /* Albequerque */ = {
+			isa = PBXGroup;
+			children = (
+				AF6EADF3169367DB00B41BF2 /* Albequerque.h */,
+				AF6EADF5169367DB00B41BF2 /* Albequerque.m */,
+				AF6EADF1169367DB00B41BF2 /* Supporting Files */,
+				AFDFC172169620FB0071901E /* AlbequerqueLeg.h */,
+				AFDFC173169620FB0071901E /* AlbequerqueLeg.m */,
+				AFDFC17616962C380071901E /* AlbequerqueResult.h */,
+				AFDFC17716962C380071901E /* AlbequerqueResult.m */,
+			);
+			path = Albequerque;
+			sourceTree = "<group>";
+		};
+		AF6EADF1169367DB00B41BF2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AF6EADF2169367DB00B41BF2 /* Albequerque-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AF6EAE05169367DB00B41BF2 /* AlbequerqueTests */ = {
+			isa = PBXGroup;
+			children = (
+				AF6EAE0B169367DB00B41BF2 /* AlbequerqueTests.h */,
+				AF6EAE0C169367DB00B41BF2 /* AlbequerqueTests.m */,
+				AF6EAE06169367DB00B41BF2 /* Supporting Files */,
+			);
+			path = AlbequerqueTests;
+			sourceTree = "<group>";
+		};
+		AF6EAE06169367DB00B41BF2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AF6EAE07169367DB00B41BF2 /* AlbequerqueTests-Info.plist */,
+				AF6EAE08169367DB00B41BF2 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AF6EADEA169367DB00B41BF2 /* Albequerque */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF6EAE10169367DB00B41BF2 /* Build configuration list for PBXNativeTarget "Albequerque" */;
+			buildPhases = (
+				AF6EADE7169367DB00B41BF2 /* Sources */,
+				AF6EADE8169367DB00B41BF2 /* Frameworks */,
+				AF6EADE9169367DB00B41BF2 /* CopyFiles */,
+				97B3507703304C2E986BA3AF /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Albequerque;
+			productName = Albequerque;
+			productReference = AF6EADEB169367DB00B41BF2 /* libAlbequerque.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		AF6EADFB169367DB00B41BF2 /* AlbequerqueTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF6EAE13169367DB00B41BF2 /* Build configuration list for PBXNativeTarget "AlbequerqueTests" */;
+			buildPhases = (
+				AF6EADF7169367DB00B41BF2 /* Sources */,
+				AF6EADF8169367DB00B41BF2 /* Frameworks */,
+				AF6EADF9169367DB00B41BF2 /* Resources */,
+				AF6EADFA169367DB00B41BF2 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF6EAE03169367DB00B41BF2 /* PBXTargetDependency */,
+			);
+			name = AlbequerqueTests;
+			productName = AlbequerqueTests;
+			productReference = AF6EADFC169367DB00B41BF2 /* AlbequerqueTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AF6EADE2169367DB00B41BF2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Baked Software";
+			};
+			buildConfigurationList = AF6EADE5169367DB00B41BF2 /* Build configuration list for PBXProject "Albequerque" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AF6EADE0169367DB00B41BF2;
+			productRefGroup = AF6EADEC169367DB00B41BF2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AF6EADEA169367DB00B41BF2 /* Albequerque */,
+				AF6EADFB169367DB00B41BF2 /* AlbequerqueTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AF6EADF9169367DB00B41BF2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF6EAE0A169367DB00B41BF2 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		97B3507703304C2E986BA3AF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		AF6EADFA169367DB00B41BF2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AF6EADE7169367DB00B41BF2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF6EADF6169367DB00B41BF2 /* Albequerque.m in Sources */,
+				AFDFC174169620FB0071901E /* AlbequerqueLeg.m in Sources */,
+				AFDFC17816962C380071901E /* AlbequerqueResult.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF6EADF7169367DB00B41BF2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF6EAE0D169367DB00B41BF2 /* AlbequerqueTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AF6EAE03169367DB00B41BF2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF6EADEA169367DB00B41BF2 /* Albequerque */;
+			targetProxy = AF6EAE02169367DB00B41BF2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AF6EAE08169367DB00B41BF2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF6EAE09169367DB00B41BF2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AF6EAE0E169367DB00B41BF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AF6EAE0F169367DB00B41BF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AF6EAE11169367DB00B41BF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19C8A47A74A74705977D88CA /* Pods.xcconfig */;
+			buildSettings = {
+				DSTROOT = /tmp/Albequerque.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Albequerque/Albequerque-Prefix.pch";
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		AF6EAE12169367DB00B41BF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19C8A47A74A74705977D88CA /* Pods.xcconfig */;
+			buildSettings = {
+				DSTROOT = /tmp/Albequerque.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Albequerque/Albequerque-Prefix.pch";
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		AF6EAE14169367DB00B41BF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Albequerque/Albequerque-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "AlbequerqueTests/AlbequerqueTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		AF6EAE15169367DB00B41BF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Albequerque/Albequerque-Prefix.pch";
+				INFOPLIST_FILE = "AlbequerqueTests/AlbequerqueTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AF6EADE5169367DB00B41BF2 /* Build configuration list for PBXProject "Albequerque" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF6EAE0E169367DB00B41BF2 /* Debug */,
+				AF6EAE0F169367DB00B41BF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF6EAE10169367DB00B41BF2 /* Build configuration list for PBXNativeTarget "Albequerque" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF6EAE11169367DB00B41BF2 /* Debug */,
+				AF6EAE12169367DB00B41BF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF6EAE13169367DB00B41BF2 /* Build configuration list for PBXNativeTarget "AlbequerqueTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF6EAE14169367DB00B41BF2 /* Debug */,
+				AF6EAE15169367DB00B41BF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AF6EADE2169367DB00B41BF2 /* Project object */;
+}
