@@ -22,7 +22,8 @@ enum AlbequerqueLegMode {
 
 @property (nonatomic, assign) enum AlbequerqueLegMode mode;
 @property (nonatomic, assign) NSUInteger duration;
-@property (nonatomic, retain) NSDate * startTime;
+@property (nonatomic, retain) NSDate * departTime;
+@property (nonatomic, retain) NSDate * arriveTime;
 @property (nonatomic, retain) NSString * headSign;
 @property (nonatomic, retain) NSString * originDescription;
 @property (nonatomic, retain) NSString * destinationDescription;

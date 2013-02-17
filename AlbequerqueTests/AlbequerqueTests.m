@@ -52,6 +52,10 @@
             if (leg.mode == BUS || leg.mode == TRAIN || leg.mode == LIGHT_RAIL) {
                 STAssertNotNil(leg.headSign, @"Head Sign should always be set for Bus and Rail");
             }
+            if (leg.mode != WALK) {
+                STAssertNotNil(leg.departTime, @"Non Walking Leg should always have a DepartTime");
+                STAssertNotNil(leg.arriveTime, @"Non Walking Leg should always have an ArriveTime");
+            }
         }
         
         dispatch_semaphore_signal(semaphore);
