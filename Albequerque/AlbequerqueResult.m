@@ -22,6 +22,10 @@ static NSString * kLegs = @"Legs";
 {
     self = [super init];
     if (self) {
+        NSDateFormatter *df = [NSDateFormatter new];
+        df.dateFormat = @"yyyy-MM-dd'T'HH:mm";
+        departTime = [df dateFromString:[json valueForKey:kDepartTime]];
+        arriveTime = [df dateFromString:[json valueForKey:kArriveTime]];
         duration = [[json valueForKey:kDurationMinutes] unsignedIntegerValue];
         NSMutableArray * parsedLegs = [NSMutableArray new];
         for (NSDictionary *legDict in [json valueForKey:kLegs]) {

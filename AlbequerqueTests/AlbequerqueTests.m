@@ -47,6 +47,8 @@
         STAssertTrue(result.count == 3, @"There should be 3 journeys (default)");
         AlbequerqueResult * journey = result[0];
         STAssertTrue(journey.legs.count > 0, @"Result should have at least 1 leg");
+        STAssertNotNil(journey.arriveTime, @"Journey must have an ArriveTime");
+        STAssertNotNil(journey.departTime, @"Journey nust have a DepartTime");
         for (AlbequerqueLeg *leg in journey.legs) {
             STAssertNotNil(leg.instructions, @"Leg should always have instructions");
             if (leg.mode == BUS || leg.mode == TRAIN || leg.mode == LIGHT_RAIL) {
