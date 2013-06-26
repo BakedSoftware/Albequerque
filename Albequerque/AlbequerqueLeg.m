@@ -7,6 +7,7 @@
 //
 
 #import "AlbequerqueLeg.h"
+#import <MapKit/MapKit.h>
 
 static NSString * kMode = @"Mode";
 static NSString * kBus = @"Bus";
@@ -24,13 +25,15 @@ static NSString * kHeadSign = @"Headsign";
 static NSString * kPolyLine = @"Polyline";
 static NSString * kDepartTime = @"DepartTime";
 static NSString * kArriveTime = @"ArriveTime";
+static NSString * kIsUnMapped = @"isUnMapped";
 
 static NSString * kWalkFormat = @"Walk from %@ to %@";
 static NSString * kGeneralFormat = @"Take %@ towards %@ (Head Sign: %@)";
 
+
 @implementation AlbequerqueLeg
 
-@synthesize mode, originDescription, destinationDescription, duration, routeName, headSign, departTime, arriveTime, instructions, polyline, walkDistance;
+@synthesize mode, originDescription, destinationDescription, duration, routeName, headSign, departTime, arriveTime, instructions, polyline, walkDistance, isMapped;
 
 - (id)initWithJSON:(NSDictionary *)json
 {
@@ -80,8 +83,28 @@ static NSString * kGeneralFormat = @"Take %@ towards %@ (Head Sign: %@)";
             }
         }
         
-        polyline = [json valueForKey:kPolyLine];
-    
+        if ([json objectForKey:kIsUnMapped] != nil) {
+            isMapped = [[json objectForKey:kIsUnMapped] boolValue];
+        } else {
+            isMapped = YES;
+        }
+        if (isMapped) {
+            NSString *polyString = [json valueForKey:kPolyLine];
+            if (polyString) {
+                NSArray *coordsStr = [polyString componentsSeparatedByString:@";"];
+                CLLocationCoordinate2D * coords = (CLLocationCoordinate2D*)malloc(sizeof(CLLocationCoordinate2D) * coordsStr.count);
+                static NSString * SPLIT = @",";
+                for (int i = 0; i < coordsStr.count; ++i) {
+                    NSString * dead = coordsStr[i];
+                    NSArray * comps = [dead componentsSeparatedByString:SPLIT];
+                    CLLocationDegrees lat = [comps[0] doubleValue];
+                    CLLocationDegrees lon = [comps[1] doubleValue];
+                    coords[i] = CLLocationCoordinate2DMake(lat, lon);
+                }
+                
+                polyline = [MKPolyline polylineWithCoordinates:coords count:coordsStr.count];
+            }
+        }
     }
     
     return self;

@@ -18,6 +18,8 @@ enum AlbequerqueLegMode {
     PRIVATE
     };
 
+@class MKPolyline;
+
 @interface AlbequerqueLeg : NSObject
 
 @property (nonatomic, assign) enum AlbequerqueLegMode mode;
@@ -29,8 +31,9 @@ enum AlbequerqueLegMode {
 @property (nonatomic, retain) NSString * destinationDescription;
 @property (nonatomic, retain) NSString * routeName;
 @property (nonatomic, readonly) NSString * instructions;
-@property (nonatomic, readonly) NSString * polyline;
+@property (nonatomic, readonly) MKPolyline * polyline;
 @property (nonatomic, readonly) NSUInteger walkDistance;
+@property (nonatomic, readonly) BOOL isMapped;
 
 - (id)initWithJSON:(NSDictionary*)json;
 
